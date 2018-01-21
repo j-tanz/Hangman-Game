@@ -1,0 +1,21 @@
+body {
+    background-image: url(../images/gridiron-background1.jpg);
+}
+
+h1 {
+    visibility: hidden;
+}
+
+.jumbotron {
+    opacity: 0.6;
+}
+
+.gallowsBox {
+    position: relative;
+}
+
+.fixPosition {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
