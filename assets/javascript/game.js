@@ -1,10 +1,12 @@
+// var mascotArr = ['eagls']
 var mascotArr = ['boilermakers', 'cornhuskers', 'wildcats', 'cardinal', 'gamecocks', 'hoosiers', 'volunteers', 'wolfpack', 'wolverines', 'midshipmen', 'mountaineers', 'hilltoppers', 'commodores', 'terrapins', 'jayhawks', 'buffaloes', 'seminoles', 'longhorns', 'razorbacks', 'argonauts','anteaters','ambassadors','artichokes','hardrockers','highlanders','hurricanes','ichabods','jackrabbits','leathernecks','lemmings','moundbuilders','muleriders','orediggers','platypi','quakers','railsplitters','roadrunners','roughnecks','sasquatch','thunderducks','tornadoes'];
 var lives = 6;
 var mysteryWord = mascotArr[Math.floor(Math.random() * mascotArr.length)];
 var splitWord = mysteryWord.split('');
 var splitLength = splitWord.length;
+var winners = 0;
 
-    console.log(mysteryWord, splitLength);
+    console.log(mysteryWord, splitWord);
 
 var blankArr = [''];
 
@@ -26,26 +28,46 @@ var guess = function(keyChoice) {
     userGuessArr.push(userGuess);
     // console.log(userGuessArr);
     var checkGuess = splitWord.indexOf(userGuess);
-    // console.log(splitWord);
+    // console.log(checkGuess);
     if (checkGuess < 0) {
         lives -= 1
         // console.log('lives', lives);
     } else {
-        for (a = 0; a < splitLength; a++) {
-            blankArr[a] = userGuess.substr(a,1);
-            console.log(userGuess.substr(a,1));
-        }
-        for (b = 0; b < splitLength; b++) {
-            if (splitWord[b] == userGuess) {
-            blankArr[b] = userGuess;
+        for ( i = 0; i < splitLength; i++) {
+            blankArr.splice(checkGuess,1,userGuess);
+            // console.log(blankArr);
+            var fillSpaces = document.getElementById('hiddenWordSpace');
+            fillSpaces.innerText = blankArr;
+
+            
+                if (blankArr.toSring === splitWord.toString) {
+                    winners += 1;
+                    console.log(winners, blankArr.toString, splitWord.toString);
+
             }
         }
-    }        
-        
-        
-
+    }
+       
     
-/*        function FindAll(splitWord, userGuess) {
+
+
+
+
+
+/////////// THIS IS ALL CRAP AND JUNK I TRIED THAT DIDNT WORK; LEAVING IN TEMP SO YOU CAN SEE HOW FAR OFF I WAS, HA.
+        // for (a = 0; a < splitLength; a++) {
+        //     blankArr[a] = userGuess.substr(a,1);
+        //     console.log(userGuess.substr(a,1));
+        // }
+        // for (b = 0; b < splitLength; b++) {
+        //     if (splitWord[b] == userGuess) {
+        //     blankArr[b] = userGuess;
+        //     }
+        // }
+            
+        ///MORE CRAP
+ /*   
+      function FindAll(splitWord, userGuess) {
             var letterMatch = [];
             for (var correctPosition = splitWord.indexOf(userGuess); correctPosition !== -1; correctPosition = splitWord.indexOf((userGuess), correctPosition + 1)) {
                 letterMatch.push(correctPosition);
@@ -84,19 +106,11 @@ var guess = function(keyChoice) {
             manRArm.style.visibility = 'visible';
     }
 
-
 }
-   
+var winCounter = document.getElementById('winCount');
+winCounter.innerText = winners;
 
-
-    
-
-
-
- 
 
 document.addEventListener("keyup", guess);
 
-
-    
 
