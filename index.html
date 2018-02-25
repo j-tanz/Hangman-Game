@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <br>
     <img src="assets/images/banner.png" class="img-rounded center-block" alt="Hangman">
     <h1>College Mascot Hangman Game</h1>
     <div class="container">
@@ -27,14 +28,18 @@
                     <img id="LArmImg" class="fixPosition hangMan" src="assets/images/hangman/LeftArm.png" alt="Left Arm">
                     <img id="RArmImg" class="fixPosition hangMan" src="assets/images/hangman/RightArm.png" alt="gallows">
                     <p id="guessRemain" class="text-center"></p>
-                    
+
                 </div>
                 <div class="col-md-6">
-                    <h3 class="text-center">Guess a Letter to Start!</h3>
-                    <br><br><br><br><br>
-                    <p id="wins" class="text-center">Wins</p>
+                    <h3 class="text-center">Guess a Letter!</h3>
+                    <br>
+                    <br>
+                    <br>
+                    <p id="wins" class="text-center">Wins :</p>
                     <p id="winCount" class="text-center">0</p>
-                    <br><br>
+                    <br>
+                    <br>
+                    <br>
                     <p id="currentWord" class="text-center"> CURRENT WORD</p>
                     <br>
                     <p id="hiddenWordSpace" class="text-center">_</p>
@@ -43,11 +48,18 @@
                 </div>
 
             </div>
+        </div>
     </div>
-    
-        
+    <div id="myModal" class="modal">
 
-    </div>
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3 id="appendMe"></h3>
+          <br>
+          <button class="btn btn-default" id="closeModal">PLAY AGAIN</button>
+        </div>
+      
+      </div>
 </body>
 <script src="assets/javascript/game.js"></script>
 
