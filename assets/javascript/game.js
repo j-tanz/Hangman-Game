@@ -87,7 +87,7 @@ var guess = function (keyChoice) {
 function loseGame() {
     modal.style.display = "block";
     document.removeEventListener('keyup', guess);
-    (document.getElementById('appendMe')).innerHTML = '<p> YOU ARE HUNG.  The correct mascot was : </p>' + '<span>' + mysteryWord + '</span>';
+    (document.getElementById('appendMe')).innerHTML = '<p> YOU ARE HANGED.  The correct mascot was : </p>' + '<span>' + mysteryWord + '</span>';
 }
 
 function winGame() {
